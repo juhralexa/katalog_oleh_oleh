@@ -27,9 +27,13 @@ class HalamanDetail extends StatelessWidget {
     final teks = Theme.of(context).textTheme;
     final gambar = AspectRatio(
       aspectRatio: 4 / 3,
-      child: Container(
-        color: p.warna.withValues(alpha: 0.15),
-        child: Icon(p.ikon, size: 120, color: p.warna),
+      child: Image.asset(
+        p.gambar,
+        fit: BoxFit.cover,
+        errorBuilder: (context, error, stackTrace) => Container(
+          color: p.warna.withValues(alpha: 0.15),
+          child: Icon(p.ikon, size: 120, color: p.warna),
+        ),
       ),
     );
     final info = Padding(

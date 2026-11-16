@@ -50,11 +50,17 @@ class KartuProduk extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
-              child: Container(
+                        Expanded(
+              child: SizedBox(
                 width: double.infinity,
-                color: produk.warna.withValues(alpha: 0.15),
-                child: Icon(produk.ikon, size: 56, color: produk.warna),
+                child: Image.asset(
+                  produk.gambar,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) => Container(
+                    color: produk.warna.withValues(alpha: 0.15),
+                    child: Icon(produk.ikon, size: 56, color: produk.warna),
+                  ),
+                ),
               ),
             ),
             Padding(
